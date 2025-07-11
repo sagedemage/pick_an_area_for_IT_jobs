@@ -3,7 +3,11 @@ import pandas as pd
 from bcolors import BColors
 
 categories = ["Job_Board", "Industries"]
-category = random.choice(categories)
+
+# Make it so that there is a 20% chance of getting the Job_Board category
+# and a 80% chance of getting the Industries category
+sample_categories = random.sample(categories, counts=[2, 8], k = 10)
+category = random.choice(sample_categories)
 
 search_message = "Search for IT jobs in ->"
 

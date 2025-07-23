@@ -2,6 +2,7 @@ import random
 import pandas as pd
 from bcolors import BColors
 import sys
+import json
 
 length = len(sys.argv)
 args = sys.argv
@@ -35,10 +36,13 @@ match category:
         job_boards = job_boards_series.to_list()
         job_board = random.choice(job_boards)
 
-        df = pd.read_csv("./data/states.csv")
-        states_series = df["States"]
-        states = states_series.to_list()
+        states = []
+        with open("states.json") as file:
+            data = json.load(file)
+            states = data["States"]
+        
         state = random.choice(states)
+
         print(search_message)
         print("Job Board: " + BColors.LIGHT_CYAN + job_board + BColors.END)
         print("State: " + state)

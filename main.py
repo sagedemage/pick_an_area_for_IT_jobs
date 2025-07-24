@@ -23,8 +23,8 @@ elif length == 2:
     sys.exit()
 elif length == 1:
     print("Use the program like this:")
-    print("python .\\main.py --category Job_Boards")
-    print("python .\\main.py --category Industries")
+    print("python .\\main.py --category Job_Board")
+    print("python .\\main.py --category Industry")
     sys.exit()
 
 search_message = "Search for IT jobs in ->"
